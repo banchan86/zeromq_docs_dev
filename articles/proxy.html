@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Proxy | Bonsai.ZeroMQ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Proxy | Bonsai.ZeroMQ ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bonsai-rx/zeromq/blob/main/docs/articles/proxy.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Bonsai - ZeroMQ">
+            Bonsai - ZeroMQ
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="proxy">
+<h1 id="proxy-intermediation">Proxy (Intermediation)</h1>
+
+<p>The basic messaging patterns in ZeroMQ use direct connections between socket endpoints. The role of proxies, or <em>intermediaries</em>, is to abstract away direct references between endpoints, replacing them by references to the proxy.</p>
+<p>The proxy itself is specified by exposing a <a class="xref" href="../api/Bonsai.ZeroMQ.ProxyFrontend.html">ProxyFrontend</a> socket and a <a class="xref" href="../api/Bonsai.ZeroMQ.ProxyBackend.html">ProxyBackend</a> socket. All primary messages are routed from front-end to back-end, but secondary responses or subscription messages can also flow from back-end to front-end as required by the specified socket types.</p>
+<p>This enables easily building variants of the basic patterns where peers are discovered dynamically or pools of clients and services can join and leave at any time, with the only constraint that all message passing is stateless. The examples below illustrate some of the most common proxy patterns.</p>
+<h3 id="example-extended-publish-subscribe"><strong>Example:</strong> Extended Publish-Subscribe</h3>
+<p>In the basic <a class="xref" href="pub-sub.html">Publish-Subscribe</a> pattern, a set of subscribers connect to a single publisher. Typically the publisher binds to its endpoint and does not know the identity of the subscribers. However, all subscribers have to know the identity of the publisher endpoint. This makes it hard to replace the publisher, or to allow for multiple publishers to push data to subscribers.</p>
+<p>The extended publish-subscribe pattern allows for dynamic discovery of both publishers and subscribers by introducing a proxy. This way, publishers do not need to know the identity of subscribers, and subscribers do not need to know the identity of publishers. Only the identity of the proxy endpoints is required.</p>
+<pre><code class="lang-mermaid">graph LR
+    A(Publisher) ---|PUB| D(&lt;p&gt;&lt;/p&gt;)
+    B(Publisher) ---|PUB| D(&lt;p&gt;&lt;/p&gt;)
+    C(Publisher) ---|PUB| D(&lt;p&gt;&lt;/p&gt;)
+    D ---|XSUB| E(Proxy)
+    E ---|XPUB| F(&lt;p&gt;&lt;/p&gt;)
+    F --&gt;|SUB| G(Subscriber)
+    F --&gt;|SUB| H(Subscriber)
+    F --&gt;|SUB| I(Subscriber)
+</code></pre>
+<p>The proxy needs to be configured with a <a class="xref" href="../api/Bonsai.ZeroMQ.SocketType.html#Bonsai_ZeroMQ_SocketType_XSubscriber">XSubscriber</a> as the front-end socket, and a <a class="xref" href="../api/Bonsai.ZeroMQ.SocketType.html#Bonsai_ZeroMQ_SocketType_XPublisher">XPublisher</a> as the back-end socket. In the example below, two timers publish periodic updates to an unknown set of subscribers using this proxy pattern.</p>
+<div class="workflow"><p><img src="../workflows/xpub-xsub.bonsai" alt="XPub-XSub workflow"></p>
+</div>
+<h3 id="example-extended-request-response"><strong>Example:</strong> Extended Request-Response</h3>
+<p>In the basic <a class="xref" href="req-rep.html">Request-Response</a> pattern, one client connects to a single server. We can also use <a class="xref" href="router-dealer.html">Router-Dealer</a> patterns so that multiple asynchronous requests can be handled in parallel by the server. However, in both cases we assume there is a single endpoint for handling service requests which is known by all clients.</p>
+<p>The extended request-response pattern allows for clusters of workers to dynamically join or leave a shared message queue, and handle requests from existing clients as they arrive. The client connects to the proxy front-end, and workers to the proxy back-end. This way we can scale up the number of workers without having to change anything about the clients.</p>
+<pre><code class="lang-mermaid">graph LR
+    A(Client) ---|REQ| D(&lt;p&gt;&lt;/p&gt;)
+    B(Client) ---|REQ| D(&lt;p&gt;&lt;/p&gt;)
+    C(Client) ---|REQ| D(&lt;p&gt;&lt;/p&gt;)
+    D ---|Router| E(Proxy)
+    E ---|Dealer| F(&lt;p&gt;&lt;/p&gt;)
+    F --&gt;|REP| G(Worker)
+    F --&gt;|REP| H(Worker)
+    F --&gt;|REP| I(Worker)
+</code></pre>
+<p>The shared queue is simply a proxy configured with a <a class="xref" href="../api/Bonsai.ZeroMQ.SocketType.html#Bonsai_ZeroMQ_SocketType_Router">Router</a> as the front-end socket, and a <a class="xref" href="../api/Bonsai.ZeroMQ.SocketType.html#Bonsai_ZeroMQ_SocketType_Dealer">Dealer</a> as the back-end socket. In the example below, a timer sends periodic requests to the shared queue, and workers alternate servicing the requests.</p>
+<p>Each reply is tagged with the identity of the worker who handled the request for easy visualization.</p>
+<div class="workflow"><p><img src="../workflows/router-dealer-proxy.bonsai" alt="Router-Dealer proxy"></p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bonsai-rx/zeromq/blob/main/docs/articles/proxy.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          &copy; 2024 Bonsai Foundation CIC and Contributors. Made with <a href="https://dotnet.github.io/docfx">docfx</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
