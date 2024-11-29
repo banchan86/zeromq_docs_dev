@@ -1,0 +1,518 @@
+{
+  "source_base_path": "D:/a/zeromq_docs_dev/zeromq_docs_dev/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.ConvertToFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.ConvertToFrame.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.ConvertToString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.ConvertToString.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.Dealer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.Dealer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.GetIdentity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.GetIdentity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.ProxyBackend.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.ProxyBackend.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.ProxyFrontend.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.ProxyFrontend.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.Publisher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.Publisher.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.Pull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.Pull.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.Push.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.Push.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.Request.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.Request.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.Response.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.ResponseContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.ResponseContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.Router.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.Router.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.SendResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.SendResponse.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.SocketInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.SocketInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.SocketType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.SocketType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.Subscriber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.Subscriber.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.ToMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.ToMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.ZeroMQ.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.ZeroMQ.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/overview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/patterns.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/patterns.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/proxy.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/proxy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/pub-sub.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/pub-sub.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/push-pull.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/push-pull.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/recipes.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/recipes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/req-rep.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/req-rep.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/router-dealer.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/router-dealer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/convert-image.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/convert-image.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/convert-image.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/convert-image.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/convert-osc.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/convert-osc.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/convert-osc.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/convert-osc.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/pub-sub.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/pub-sub.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/pub-sub.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/pub-sub.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/push-pull.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/push-pull.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/push-pull.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/push-pull.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/req-rep.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/req-rep.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/req-rep.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/req-rep.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/req-router.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/req-router.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/req-router.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/req-router.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/router-dealer-proxy.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/router-dealer-proxy.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/router-dealer-proxy.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/router-dealer-proxy.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/xpub-xsub.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/xpub-xsub.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/xpub-xsub.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/xpub-xsub.svg"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
